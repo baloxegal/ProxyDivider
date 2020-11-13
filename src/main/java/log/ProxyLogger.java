@@ -4,7 +4,11 @@ import java.util.Optional;
 
 public class ProxyLogger implements LoggerInterface {
 
+	private static ProxyLogger proxyLoggerSingleton;
 	private LoggerInterface logger;
+		
+	private ProxyLogger() {
+	}
 		
 	@Override
 	public void info(Optional<?> message) {
@@ -12,9 +16,18 @@ public class ProxyLogger implements LoggerInterface {
 		if(logger == null)
 			logger = new RealLogger();
 		
-		System.out.println(logger);
 		logger.info(message);		
 		
 	}
 		
+	public static ProxyLogger getProxySingleton() {
+		
+		if(proxyLoggerSingleton == null) {
+			proxyLoggerSingleton = new ProxyLogger();
+		}
+		
+		return proxyLoggerSingleton;
+		
+	}
+	
 }

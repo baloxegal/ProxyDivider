@@ -6,8 +6,8 @@ public class Application {
 
 	public static void main(String[] args){
 		
-		DivideConsumer div = new DivideConsumer();		
-				
+		DivideConsumer div = DivideConsumer.getDivConsSingle();
+		
 		System.out.println(div.divide(6, 3));
 		
 		System.out.println(div.divide(6, 4));

@@ -4,6 +4,9 @@ import java.util.Optional;
 
 public class RealLogger implements LoggerInterface {
 	
+	RealLogger() {		
+	}
+	
 	@Override
 	public void info(Optional<?> message) {
 		
@@ -12,5 +15,5 @@ public class RealLogger implements LoggerInterface {
 		System.out.println("*********************");
 		
 	}
-
+	
 }
